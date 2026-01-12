@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-tacos-blue-1: #00a0d7;
+  --color-tacos-blue-2: #0090c7;
+  --color-tacos-blue-3: #007aa0;
+  --color-tacos-blue-4: #ccecff;
+  --color-tacos-blue-5: #f0f9ff;
+  --color-tacos-green-1: #008c3a;
+  --color-tacos-green-2: #007c2a;
+  --color-tacos-green-3: #005805;
+  --color-tacos-green-4: #ccff99;
+  --color-tacos-green-5: #f0ffee;
+  --color-tacos-pink-1: #cc0368;
+  --color-tacos-pink-2: #bc0358;
+  --color-tacos-pink-3: #9f033e;
+  --color-tacos-pink-4: #ffccff;
+  --color-tacos-pink-5: #fff0fc;
+  --color-tacos-purple-1: #5b2d90;
+  --color-tacos-purple-2: #4b1d80;
+  --color-tacos-purple-3: #27006a;
+  --color-tacos-purple-4: #ccccff;
+  --color-tacos-purple-5: #f5f5ff;
+  --color-tacos-teal-1: #009999;
+  --color-tacos-teal-2: #008989;
+  --color-tacos-teal-3: #006060;
+  --color-tacos-teal-4: #ccffcc;
+  --color-tacos-teal-5: #f0fffa;
+}
