@@ -59,7 +59,7 @@
         teal: 'text-tacos-teal-2 hover:bg-tacos-teal-5/10'
     }
 
-    const baseClasses = 'rounded-lg px-3 py-2 transition-all duration-200 cursor-pointer hover:outline-1 hover:outline-tacos-green-3';
+    const baseClasses = 'rounded-lg px-3 py-2 transition-colors duration-200 cursor-pointer outline-0 outline-transparent hover:outline-2 hover:outline-tacos-green-3';
 
     let outline = $derived(outlineVariants[color]);
     let activeCls = $derived.by(() => {
