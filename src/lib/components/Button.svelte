@@ -58,8 +58,14 @@
         purple: 'text-tacos-purple-2 hover:bg-tacos-purple-5/10',
         teal: 'text-tacos-teal-2 hover:bg-tacos-teal-5/10'
     }
-
-    const baseClasses = 'rounded-lg px-3 py-2 transition-colors duration-200 cursor-pointer outline-0 outline-transparent hover:outline-2 hover:outline-tacos-green-3';
+    const outlineColorClass: Record<string, string> = {
+        blue: 'outline-tacos-blue-3',
+        green: 'outline-tacos-green-3',
+        pink: 'outline-tacos-pink-3',
+        purple: 'outline-tacos-purple-3',
+        teal: 'outline-tacos-teal-3'
+    }
+    const baseClasses = `rounded-lg px-3 py-2 transition-colors duration-200 cursor-pointer outline-0 outline-transparent hover:outline-2 hover:${outlineColorClass[color]}`;
 
     let outline = $derived(outlineVariants[color]);
     let activeCls = $derived.by(() => {
