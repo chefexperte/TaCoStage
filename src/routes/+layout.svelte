@@ -65,7 +65,7 @@
     <header class="lg:hidden {bgVariantsDark[color]} border-b-2 border-gray-200 p-4 flex items-center justify-between">
         <a class="flex items-center gap-2" href={localizeHref('/')} aria-label={m.nav_home_aria()}>
             <img class="drop-shadow w-8 h-8" src={getLogo(color)} alt="logo"/>
-            <span class="text-xl font-semibold {accentVariants[color]}">TaCoStage</span>
+            <span class="text-xl font-semibold {accentVariants[color]}">{m.tacostage()}</span>
         </a>
         <button
             onclick={toggleMobileMenu}
@@ -121,16 +121,16 @@
                     <Button variant="secondary" href={localizeHref('/contributions')}
                             active={page.url.pathname === localizeHref('/contributions')}
                             color={color} onclick={closeMobileMenu}>
-                        {m.nav_contributions?.() ?? 'Contributions'}
+                        {m.nav_contributions()}
                     </Button>
                     <Button variant="secondary" href={localizeHref('/contribute')}
                             active={page.url.pathname === localizeHref('/contribute')}
                             color={color} onclick={closeMobileMenu}>
-                        {m.nav_contribute?.() ?? 'Contribute'}
+                        {m.nav_contribute()}
                     </Button>
                     <Button variant="secondary" href={localizeHref('/about')}
                             active={page.url.pathname === localizeHref('/about')} color={color} onclick={closeMobileMenu}>
-                        {m.nav_about?.() ?? 'About'}
+                        {m.nav_about()}
                     </Button>
                 </nav>
             </div>
