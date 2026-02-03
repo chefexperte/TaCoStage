@@ -1,0 +1,23 @@
+# IDE files
+.idea
+.vscode
+
+# Auto-generated files
+node_modules
+.svelte-kit
+build
+
+# Environment files
+.env
+.env.*
+
+# Git files
+.git
+.gitignore
+
+# Other files
+README.md
+Dockerfile
+compose.yaml
+docker-compose.yml
+screenshots

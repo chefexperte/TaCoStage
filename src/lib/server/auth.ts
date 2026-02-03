@@ -2,6 +2,8 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins";
 import {db} from "$lib/server/db";
+import { env } from "$env/dynamic/private";
+import { building } from '$app/environment';
 
 export const auth = betterAuth({
     database: drizzleAdapter(db, {
@@ -18,5 +20,7 @@ export const auth = betterAuth({
             defaultRole: "user",
             adminRoles: ["admin"]
         })
-    ]
+    ],
+    secret: env.BETTER_AUTH_SECRET || (building ? 'BUILD_TIME_SECRET' : undefined),
+    baseURL: env.BASE_URL
 });

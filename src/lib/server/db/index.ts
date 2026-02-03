@@ -1,10 +1,24 @@
-import { drizzle } from 'drizzle-orm/postgres-js';
+import {drizzle} from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import { env } from '$env/dynamic/private';
+import { env } from "$env/dynamic/private";
 import * as schema from './schema';
+import { building } from '$app/environment';
 
-if (!env.DATABASE_URL) throw new Error('DATABASE_URL is not set');
+const {
+    POSTGRES_HOST,
+    POSTGRES_PORT,
+    POSTGRES_USER,
+    POSTGRES_PASSWORD,
+    POSTGRES_DB
+} = env;
 
-const client = postgres(env.DATABASE_URL);
+if (!building && (!POSTGRES_DB || !POSTGRES_HOST || !POSTGRES_PORT || !POSTGRES_USER || !POSTGRES_PASSWORD))
+    throw new Error('Some env variable is not set');
 
-export const db = drizzle(client, { schema });
+const url = building 
+    ? '' 
+    : `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}`;
+
+const client = building ? ({} as any) : postgres(url);
+
+export const db = drizzle(client, {schema});
