@@ -167,6 +167,9 @@
 										</h3>
 										<p class="text-sm text-gray-600">
 											by <span class="font-medium">{contribution.name}</span>
+											{#if data.session}
+												<span class="ml-2 text-gray-500 font-normal">({contribution.email})</span>
+											{/if}
 										</p>
 									</div>
 									<div class="flex items-center gap-2">
